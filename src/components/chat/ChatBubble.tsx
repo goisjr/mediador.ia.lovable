@@ -53,7 +53,7 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
             </div>
           </>
         ) : (
-          <p className="text-sm leading-relaxed">{message.content}</p>
+          <p className="text-xl leading-relaxed">{message.content}</p>
         )}
       </div>
     </div>

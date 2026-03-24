@@ -9,7 +9,7 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({ text, highlightIndex }) => {
   const words = text.split(' ');
 
   return (
-    <p className="text-sm leading-relaxed text-foreground">
+    <p className="text-xl leading-relaxed text-foreground">
       {words.map((word, index) => (
         <span
           key={index}
