@@ -32,21 +32,21 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
               Mediador IA
             </p>
             <KaraokeText text={message.content} highlightIndex={currentWordIndex} />
-            <div className="mt-2 flex items-center gap-2">
+            <div className="mt-3 flex items-center gap-2">
               {speaking ? (
                 <button
                   onClick={cancel}
-                  className="flex items-center gap-1 text-xs text-destructive hover:text-destructive/80 transition-colors"
+                  className="flex items-center gap-2 text-lg font-semibold text-destructive hover:text-destructive/80 transition-colors px-3 py-2 rounded-lg bg-destructive/10"
                 >
-                  <Square className="w-3 h-3" />
+                  <Square className="w-6 h-6" />
                   Parar
                 </button>
               ) : (
                 <button
                   onClick={() => speakWithHighlight(message.content)}
-                  className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center gap-2 text-lg font-semibold text-primary hover:text-primary/80 transition-colors px-3 py-2 rounded-lg bg-primary/10"
                 >
-                  <Volume2 className="w-3 h-3" />
+                  <Volume2 className="w-6 h-6" />
                   Ouvir
                 </button>
               )}
