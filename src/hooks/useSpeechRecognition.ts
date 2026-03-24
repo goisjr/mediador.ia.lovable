@@ -15,7 +15,7 @@ interface UseSpeechRecognitionOptions {
 export const useSpeechRecognition = ({ lang = 'pt-BR', onResult }: UseSpeechRecognitionOptions = {}) => {
   const [listening, setListening] = useState(false);
   const [interim, setInterim] = useState('');
-  const recognitionRef = useRef<SpeechRecognition | null>(null);
+  const recognitionRef = useRef<any>(null);
 
   const isSupported = typeof window !== 'undefined' && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window);
 
