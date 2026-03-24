@@ -26,7 +26,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSend, disabled }) => {
           onChange={(e) => setValue(e.target.value)}
           placeholder="Descreva seu caso ou responda ao mediador..."
           disabled={disabled}
-          className="flex-1 bg-secondary text-foreground placeholder:text-muted-foreground rounded-xl px-4 py-3 text-sm border-none outline-none focus:ring-2 focus:ring-ring transition-shadow"
+          className="flex-1 bg-secondary text-foreground placeholder:text-muted-foreground rounded-xl px-4 py-3 text-lg border-none outline-none focus:ring-2 focus:ring-ring transition-shadow"
         />
         <button
           type="submit"
