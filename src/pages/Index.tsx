@@ -81,6 +81,13 @@ const Index = () => {
 
       {/* Input */}
       <ChatInput onSend={handleSend} disabled={loading} />
+
+      {/* Footer */}
+      <footer className="border-t border-border bg-card px-4 py-2">
+        <p className="text-[10px] text-muted-foreground text-center leading-tight">
+          Desenvolvido pelo doutorando José Caldas Gois Júnior sob orientação do Professor Doutor Ricardo Castilho como protótipo em tese de doutorado perante a FADISP. Direitos reservados. Modelo de Licenciamento Dual (Dual-licensing), MIT para o sistema open code.
+        </p>
+      </footer>
     </div>
   );
 };
