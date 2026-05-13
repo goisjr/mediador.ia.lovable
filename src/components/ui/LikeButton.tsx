@@ -2,13 +2,13 @@
 // Adaptado por José Caldas Gois Júnior goisjr@cgadv.com.br
 
 // Importa as bibliotecas e hooks
-Import React,{useState} from "react";
+import React,{useState} from "react";
 
 // Cria a função LikeButton
-function LikeButton() {
+export function LikeButton() {
 
 	// Seta os props dentro de usesState
-	const [likes, setlikes] = usesState(0);
+	const [likes, setlikes] = useState(0);
 
 	// Cria a função handleLike que será chamada quando o usuário apertar o botão	
 	function handleLike(){
