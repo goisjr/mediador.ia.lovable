@@ -2,12 +2,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Scale } from 'lucide-react';
 import ChatBubble, { ChatMessage } from '@/components/chat/ChatBubble';
 import ChatInput from '@/components/chat/ChatInput';
+import LikeButton from '@/components/ui/LikeButton';
 
 const INITIAL_MESSAGE: ChatMessage = {
   id: '1',
   role: 'assistant',
   content:
-    'Olá! Sou o Mediador IA, seu assistente para mediação e resolução de conflitos online. Conte-me sobre a situação que você gostaria de resolver. Estou aqui para ajudar ambas as partes a encontrar uma solução justa e equilibrada.',
+    'Olá! Sou o Mediador.ia, seu assistente para pré-mediação e resolução de conflitos online. Para começarmos digite o seu  email cadastrado ou que  pretende cadastrar',
 };
 
 const Index = () => {
@@ -34,7 +35,7 @@ const Index = () => {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
         content:
-          'Entendi o seu problema. Vamos tentar resolver essa questão da melhor forma possível para todos os envolvidos. Poderia me dar mais detalhes sobre o que aconteceu?',
+          'Poderia me dar mais detalhes sobre o que aconteceu?',
       };
       setMessages((prev) => [...prev, reply]);
       setLoading(false);
