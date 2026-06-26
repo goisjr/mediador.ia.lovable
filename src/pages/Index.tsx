@@ -7,7 +7,7 @@ const INITIAL_MESSAGE: ChatMessage = {
   id: '1',
   role: 'assistant',
   content:
-    'Olá! Sou o Mediador.ia, seu assistente para pré-mediação e resolução de conflitos online. Para começarmos, digite o seu email cadastrado ou o que pretende cadastrar.',
+    'Olá! Eu sou a Doula IA, o protótipo de uma  inteligência Artificial treinada para ouvir relatos de mulheres em situação de vulnerabilidade usando técnicas de escuta ativa, dar informações legais e de organismos de apoio e ajudar na formulação clara e objetiva de pretensões jurídicas. Caso não queira se identificar apenas tecle um apelido, o anonimato é um direito seu. Caso queira gravar esta sessão para futuras conversas tecle um email válido ',
 };
 
 const Index = () => {
@@ -35,7 +35,7 @@ const Index = () => {
         setMessages((prev) => [...prev, userMsg]);
 
         // Consulta o nosso banco de dados MongoDB
-        const response = await fetch(`https://mediador.ia.br/api/chat/${emailDigitado}`);
+        const response = await fetch(`https://doula.social.br/api/chat/${emailDigitado}`);
         const data = await response.json();
 
         if (data.mensagens && data.mensagens.length > 0) {
@@ -46,7 +46,7 @@ const Index = () => {
           const welcomeMsg: ChatMessage = {
             id: (Date.now() + 1).toString(),
             role: 'assistant',
-            content: `Email registrado com sucesso (${emailDigitado}). Por favor, descreva com detalhes o conflito que você gostaria de mediar hoje.`,
+            content: `Identificador registrado com sucesso (${emailDigitado}). Por favor, descreva a situação que lhe aflige e que gostaria de se afastar.`,
           };
           setMessages((prev) => [...prev, welcomeMsg]);
         }
@@ -72,7 +72,7 @@ const Index = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('https://mediador.ia.br/api/chat', {
+      const response = await fetch('https://doula.social.br/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -93,7 +93,7 @@ const Index = () => {
 
       setMessages((prev) => [...prev, reply]);
     } catch (error) {
-      console.error("Erro ao conectar com o Mediador.ia:", error);
+      console.error("Erro ao conectar com o Doula.ia:", error);
       const errorMsg: ChatMessage = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
@@ -113,10 +113,10 @@ const Index = () => {
         </div>
         <div>
           <h1 className="text-base font-semibold text-foreground leading-tight">
-            Mediador IA
+            Doula IA
           </h1>
           <p className="text-xs text-muted-foreground">
-            Assistente de mediação e composição de litígios
+            A sua assistente de IA nos momentos de vulnerabilidade.
           </p>
         </div>
       </header>
@@ -145,7 +145,10 @@ const Index = () => {
      
       <footer className="border-t border-border bg-card px-4 py-2">
         <p className="text-[10px] text-muted-foreground text-center leading-tight">
-          Desenvolvido pelo doutorando José Caldas Gois Júnior sob orientação do Professor Doutor Ricardo Castilho como protótipo em tese de doutorado perante a FADISP. Direitos reservados. Modelo de Licenciamento Dual (Dual-licensing), MIT para o sistema open code.
+          Desenvolvido pelo doutorando José Caldas Gois Júnior sob orientação do Professor Doutor Ricardo Castilho como protótipo de artigo apresentado perante o Congresso Ibero Americano de Direitos Humanos.
+	</p>
+	<p className="text-[10px] text-muted-foreground text-center leading-tight">
+	 Direitos reservados. Modelo de Licenciamento Dual (Dual-licensing), MIT para o sistema open code.
         </p>
       </footer>
     </div>
